@@ -37,7 +37,7 @@
       <div class="hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">AI Agents · GenAI Infrastructure · Enterprise Automation</p>
-          <h1>Building practical AI agents for real enterprise workflows.</h1>
+          <h1>AI Agent Engineer building enterprise GenAI systems.</h1>
           <p class="hero-text">
             I’m Logesh Chandran, an AI Agent Engineer and AI Architect focused on LangChain/LangGraph systems,
             private model integrations, MLOps, observability, RAG, and scalable AI infrastructure.
@@ -56,24 +56,31 @@
         </div>
 
         <div class="hero-visual reveal" data-tilt>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="profile-stage">
-            <div class="profile-card">
-              <img class="profile-photo" src="https://github.com/LogeshChandran.png?size=460" alt="Logesh Chandran profile photo" />
-              <div class="profile-ring"></div>
-              <div class="profile-badge">AI Architect</div>
+          <div class="profile-showcase">
+            <div class="profile-glow"></div>
+            <div class="profile-card-v2">
+              <div class="profile-frame">
+                <img class="profile-photo" src="assets/profile.jpg" onerror="this.onerror=null;this.src='https://github.com/LogeshChandran.png?size=520';" alt="Logesh Chandran profile photo" />
+              </div>
+              <div class="profile-info-card">
+                <span class="status-dot"></span>
+                <div>
+                  <strong>Logesh Chandran</strong>
+                  <small>AI Agent Engineer · AI Architect</small>
+                </div>
+              </div>
             </div>
-            <div class="ai-card mini-card">
+            <div class="stack-orbit orbit-langchain">LangChain</div>
+            <div class="stack-orbit orbit-gemini">Gemini</div>
+            <div class="stack-orbit orbit-kubeflow">Kubeflow</div>
+            <div class="stack-orbit orbit-rag">RAG</div>
+            <div class="code-panel">
               <div class="terminal-top"><span></span><span></span><span></span></div>
-              <pre><code>agent.stack = ["LangGraph", "RAG", "MLOps"]
-agent.mode = "enterprise-ready"</code></pre>
+              <pre><code>agent.role = "AI Architect"
+agent.stack = ["LangGraph", "RAG", "MLOps"]
+agent.output = "enterprise-ready"</code></pre>
             </div>
           </div>
-          <div class="floating-chip chip-a">LangChain</div>
-          <div class="floating-chip chip-b">Vertex AI</div>
-          <div class="floating-chip chip-c">Kubeflow</div>
-          <div class="floating-chip chip-d">RAG</div>
         </div>
       </div>
     </section>
@@ -235,23 +242,42 @@ agent.mode = "enterprise-ready"</code></pre>
         <p class="eyebrow">GitHub Metrics</p>
         <h2>Open-source activity and engineering interests.</h2>
       </div>
-      <div class="github-watch-grid reveal" id="githubWatchGrid" aria-live="polite">
-        <article class="watch-card"><span>Public Repos</span><strong data-github="public_repos">--</strong><small>repositories owned</small></article>
-        <article class="watch-card"><span>Followers</span><strong data-github="followers">--</strong><small>people following you</small></article>
-        <article class="watch-card"><span>Following</span><strong data-github="following">--</strong><small>profiles you follow</small></article>
-        <article class="watch-card"><span>Total Repo Stars</span><strong data-github="total_stars">--</strong><small>stars received</small></article>
-        <article class="watch-card"><span>Repo Watchers</span><strong data-github="total_watchers">--</strong><small>subscribers/watchers</small></article>
-        <article class="watch-card"><span>Repos Starred</span><strong data-github="starred_count">--</strong><small>repositories you starred</small></article>
+      <div class="github-dashboard reveal" aria-live="polite">
+        <div class="github-profile-card">
+          <img class="github-avatar" src="https://github.com/LogeshChandran.png?size=240" alt="Logesh Chandran GitHub profile photo" />
+          <div>
+            <p class="eyebrow compact">Live GitHub</p>
+            <h3>@LogeshChandran</h3>
+            <p>Public GitHub profile signals loaded with GitHub API, so the section will not depend on broken readme-stats images.</p>
+            <a class="mini-link" href="https://github.com/LogeshChandran" target="_blank" rel="noreferrer">Open GitHub Profile →</a>
+          </div>
+        </div>
+        <div class="github-watch-grid" id="githubWatchGrid">
+          <article class="watch-card"><span>Public Repos</span><strong data-github="public_repos">--</strong><small>repositories owned</small></article>
+          <article class="watch-card"><span>Followers</span><strong data-github="followers">--</strong><small>people following you</small></article>
+          <article class="watch-card"><span>Following</span><strong data-github="following">--</strong><small>profiles you follow</small></article>
+          <article class="watch-card"><span>Total Stars</span><strong data-github="total_stars">--</strong><small>stars received</small></article>
+          <article class="watch-card"><span>Repo Watchers</span><strong data-github="total_watchers">--</strong><small>public subscribers/watchers</small></article>
+          <article class="watch-card"><span>Repos Starred</span><strong data-github="starred_count">--</strong><small>repositories you starred</small></article>
+        </div>
       </div>
-      <p class="github-note reveal">These numbers load live from GitHub public APIs. Exact repository traffic/views require a private GitHub token, so this page uses public metrics plus the profile-view badge below.</p>
+      <div class="github-insights reveal">
+        <article class="insight-card">
+          <div class="insight-head"><h3>Top Languages</h3><span>Live</span></div>
+          <div class="language-list" id="languageList">
+            <p class="loading-text">Loading language usage...</p>
+          </div>
+        </article>
+        <article class="insight-card">
+          <div class="insight-head"><h3>Repository Highlights</h3><span>Updated</span></div>
+          <div class="repo-list" id="repoList">
+            <p class="loading-text">Loading latest repositories...</p>
+          </div>
+        </article>
+      </div>
+      <p class="github-note reveal">Repository traffic/views are private in GitHub and require a personal token, so this public site shows live public metrics. Profile views are tracked with a public badge.</p>
       <div class="profile-view-badge reveal">
         <img src="https://komarev.com/ghpvc/?username=LogeshChandran&label=Profile%20views&color=38bdf8&style=for-the-badge" alt="Logesh profile views badge" loading="lazy">
-      </div>
-      <div class="github-grid reveal">
-        <img src="https://github-readme-stats.vercel.app/api?username=LogeshChandran&show_icons=true&theme=tokyonight&hide_border=true" alt="Logesh GitHub stats" loading="lazy">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LogeshChandran&layout=compact&theme=tokyonight&hide_border=true" alt="Logesh top languages" loading="lazy">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=LogeshChandran&theme=tokyonight&hide_border=true" alt="Logesh GitHub streak" loading="lazy">
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=LogeshChandran&theme=tokyo-night&hide_border=true" alt="Logesh GitHub activity graph" loading="lazy">
       </div>
     </section>
 
