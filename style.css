@@ -773,3 +773,338 @@ h1 {
     width: calc(100% - 20px);
   }
 }
+
+/* Mobile responsive hardening patch */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.22), transparent 34%),
+      radial-gradient(circle at 90% 8%, rgba(236, 72, 153, 0.16), transparent 32%),
+      var(--bg);
+  }
+
+  .cursor-glow,
+  #matrixCanvas {
+    opacity: 0.06;
+  }
+
+  .site-header {
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 22px;
+    padding: 9px 10px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .brand-cube {
+    width: 38px;
+    height: 38px;
+    border-radius: 13px;
+    flex: 0 0 auto;
+  }
+
+  .brand span:last-child {
+    display: inline;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .nav {
+    position: fixed;
+    top: 72px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    display: none;
+    padding: 12px;
+    border-radius: 20px;
+    background: rgba(5, 8, 22, 0.96);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+  }
+
+  .nav.open {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .nav a {
+    text-align: center;
+    padding: 12px 10px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .section {
+    width: calc(100% - 24px);
+    padding: 64px 0;
+  }
+
+  .hero {
+    padding-top: 104px;
+    padding-bottom: 36px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .project-grid,
+  .skills-layout,
+  .github-dashboard,
+  .github-insights,
+  .github-watch-grid,
+  .github-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 12vw, 3.55rem);
+    line-height: 1.03;
+    letter-spacing: -0.055em;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.04;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-text {
+    margin: 18px 0 22px;
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 13px 16px;
+  }
+
+  .metric-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .metric-row div {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .metric-row strong {
+    font-size: 1.35rem;
+  }
+
+  .hero-visual {
+    min-height: auto;
+    width: 100%;
+    margin-top: 12px;
+    overflow: visible;
+  }
+
+  .profile-showcase {
+    width: 100%;
+    min-height: 390px;
+    padding: 14px 0 74px;
+  }
+
+  .profile-glow {
+    width: 260px;
+    height: 260px;
+    opacity: 0.7;
+  }
+
+  .profile-card-v2 {
+    width: min(285px, 82vw);
+    padding: 12px;
+    border-radius: 28px;
+    transform: none !important;
+  }
+
+  .profile-frame {
+    border-radius: 22px;
+  }
+
+  .profile-info-card {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .profile-info-card strong {
+    font-size: 0.92rem;
+  }
+
+  .profile-info-card small {
+    font-size: 0.76rem;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .stack-orbit {
+    display: none !important;
+  }
+
+  .code-panel {
+    left: 50% !important;
+    right: auto;
+    bottom: 0;
+    width: min(310px, calc(100vw - 42px));
+    padding: 12px;
+    border-radius: 18px;
+    transform: translateX(-50%) !important;
+  }
+
+  .code-panel pre,
+  pre {
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+
+  .glass-card,
+  .project-card,
+  .skill-panel,
+  .contact-card,
+  .github-profile-card,
+  .insight-card,
+  .watch-card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+  .timeline-item {
+    padding-left: 36px;
+  }
+
+  .timeline-dot {
+    top: 24px;
+  }
+
+  .skill-cloud,
+  .tags {
+    gap: 8px;
+  }
+
+  .skill-pill,
+  .tags span {
+    font-size: 0.76rem;
+    padding: 8px 9px;
+  }
+
+  .github-profile-card {
+    grid-template-columns: 72px 1fr;
+    gap: 14px;
+  }
+
+  .github-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+  }
+
+  .watch-card {
+    min-height: 108px;
+  }
+
+  .watch-card strong {
+    font-size: 2rem;
+  }
+
+  .insight-head {
+    display: grid;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .repo-item {
+    padding: 12px;
+  }
+
+  .footer {
+    padding: 28px 14px 38px;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand span:last-child {
+    max-width: 130px;
+  }
+
+  .section {
+    width: calc(100% - 20px);
+  }
+
+  .metric-row {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-showcase {
+    min-height: 365px;
+  }
+
+  .profile-card-v2 {
+    width: min(260px, 84vw);
+  }
+
+  .code-panel {
+    width: min(295px, calc(100vw - 30px));
+  }
+
+  .github-profile-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .github-avatar {
+    margin: 0 auto;
+  }
+
+  .nav.open {
+    grid-template-columns: 1fr;
+  }
+}
+        
