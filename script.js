@@ -217,7 +217,7 @@ const sections = [...document.querySelectorAll('main section[id]')];
 const navLinks = [...document.querySelectorAll('.nav a')];
 
 window.addEventListener('scroll', () => {
-  const current = sections.findLast((section) => window.scrollY + 160 >= section.offsetTop);
+  const current = [...sections].reverse().find((section) => window.scrollY + 160 >= section.offsetTop);
   navLinks.forEach((link) => link.classList.toggle('active', current && link.getAttribute('href') === `#${current.id}`));
 });
 
