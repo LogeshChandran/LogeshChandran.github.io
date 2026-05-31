@@ -3,10 +3,280 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Logesh Chandran</title>
+  <meta name="description" content="Logesh Chandran - AI Agent Engineer, AI Architect, GenAI Infrastructure, MLOps and Data Science portfolio." />
+  <title>Logesh Chandran | AI Agent Engineer & AI Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hi, I'm Logesh Chandran</h1>
-  <p>Welcome to my portfolio.</p>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-cube">LC</span>
+      <span>Logesh Chandran</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#github">GitHub</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">AI Agents · GenAI Infrastructure · Enterprise Automation</p>
+          <h1>Building practical AI agents for real enterprise workflows.</h1>
+          <p class="hero-text">
+            I’m Logesh Chandran, an AI Agent Engineer and AI Architect focused on LangChain/LangGraph systems,
+            private model integrations, MLOps, observability, RAG, and scalable AI infrastructure.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/logeshchandran/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/LogeshChandran" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div class="metric-row" aria-label="Professional highlights">
+            <div><strong>4+</strong><span>Years AI/Data</span></div>
+            <div><strong>2B+</strong><span>Rows handled</span></div>
+            <div><strong>600GB</strong><span>BigQuery data</span></div>
+            <div><strong>10%</strong><span>Revenue lift</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-tilt>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="profile-stage">
+            <div class="profile-card">
+              <img class="profile-photo" src="https://github.com/LogeshChandran.png?size=460" alt="Logesh Chandran profile photo" />
+              <div class="profile-ring"></div>
+              <div class="profile-badge">AI Architect</div>
+            </div>
+            <div class="ai-card mini-card">
+              <div class="terminal-top"><span></span><span></span><span></span></div>
+              <pre><code>agent.stack = ["LangGraph", "RAG", "MLOps"]
+agent.mode = "enterprise-ready"</code></pre>
+            </div>
+          </div>
+          <div class="floating-chip chip-a">LangChain</div>
+          <div class="floating-chip chip-b">Vertex AI</div>
+          <div class="floating-chip chip-c">Kubeflow</div>
+          <div class="floating-chip chip-d">RAG</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <p class="eyebrow">Profile</p>
+        <h2>AI engineer with deep MLOps and data science foundations.</h2>
+      </div>
+      <div class="about-grid">
+        <article class="glass-card reveal">
+          <h3>Who I Am</h3>
+          <p>
+            Dynamic and results-driven professional with extensive experience in MLOps, data science, NLP,
+            LLMs, and enterprise AI systems. Skilled in building and deploying end-to-end machine learning
+            pipelines, model monitoring systems, and retraining workflows for high performance and scalability.
+          </p>
+        </article>
+        <article class="glass-card reveal">
+          <h3>Current Direction</h3>
+          <p>
+            At Samsung R&D, I work around AI agent engineering and GenAI infrastructure for internal employee
+            productivity, including personalized agents, memory optimization, private/local model integration,
+            observability, and enterprise-safe autonomous systems.
+          </p>
+        </article>
+        <article class="glass-card reveal">
+          <h3>Engineering Philosophy</h3>
+          <p>
+            Build AI systems that are useful, private when needed, observable, secure, tool-aware, reliable,
+            and practical for real users. The next wave of enterprise AI goes beyond chatbots into governed,
+            tool-using, memory-aware agentic systems.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-head reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Enterprise AI, product engineering, and scalable delivery.</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="date">Current</span>
+            <h3>Samsung R&D</h3>
+            <p class="role">AI Agent Engineering & GenAI Infrastructure</p>
+            <ul>
+              <li>Designing agent architectures for planning, reasoning, tool execution, and workflow governance.</li>
+              <li>Building LangChain/LangGraph workflows with local/private model integrations.</li>
+              <li>Improving agent memory, personalization, observability, and enterprise safety.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="date">Sep 2021 - Present / Previous Role Context</span>
+            <h3>Infosys Limited · Chennai</h3>
+            <p class="role">Data Science, GenAI, MLOps · Client: Home Depot</p>
+            <ul>
+              <li>Built RAG, chatbot, customer behavior prediction, retraining, and Kubeflow pipeline solutions.</li>
+              <li>Worked with GCP, Vertex AI, BigQuery, Dataform, Docker, Kubernetes, GKE, and Artifact Registry.</li>
+              <li>Delivered scalable data and ML workflows across retail/e-commerce use cases.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="date">Past</span>
+            <h3>Zoho</h3>
+            <p class="role">Product Engineering</p>
+            <ul>
+              <li>Worked in a product-focused engineering environment.</li>
+              <li>Built practical engineering foundations across software development and system design.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-head reveal">
+        <p class="eyebrow">Project Showcase</p>
+        <h2>Selected AI, RAG, MLOps, and data science systems.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal featured-project" data-tilt>
+          <div class="project-icon">🔐</div>
+          <div class="project-meta">Latest · Agentic AI</div>
+          <h3>Enterprise Agent Architecture</h3>
+          <p>Designing governed AI agents with planning, tool execution, short/long-term memory, observability, WebSocket-style low-latency interactions, and human-controlled enterprise safety.</p>
+          <div class="tags"><span>AI Agents</span><span>LangGraph</span><span>MCP</span><span>Observability</span></div>
+        </article>
+        <article class="project-card reveal featured-project" data-tilt>
+          <div class="project-icon">🧠</div>
+          <div class="project-meta">Trending · Multimodal RAG</div>
+          <h3>E-Commerce Question & Answer System</h3>
+          <p>Converted PDF documents into images, extracted text using multimodal RAG with Gemini, embedded content into ChromaDB, and improved responses using cross-encoder re-ranking and auto-evaluation.</p>
+          <div class="tags"><span>Gemini</span><span>RAG</span><span>ChromaDB</span><span>LangChain</span></div>
+        </article>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-icon">💬</div>
+          <div class="project-meta">GenAI · Internal Assistants</div>
+          <h3>Internal ChatBot with Gemini</h3>
+          <p>Implemented document chunking, text-embedding-004 embeddings, FAISS vector search, query expansion, cross-encoder ranking, and Gemini Pro/Flash for real-time internal knowledge assistance.</p>
+          <div class="tags"><span>FAISS</span><span>Gemini Flash</span><span>NLP</span><span>LLM</span></div>
+        </article>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-icon">📈</div>
+          <div class="project-meta">MLOps · Big Data</div>
+          <h3>Customer Behavior Prediction & Retraining</h3>
+          <p>Performed EDA and feature engineering on 600GB and 2B+ rows in BigQuery, built models for purchase intent and transaction forecasting, and automated performance monitoring and retraining.</p>
+          <div class="tags"><span>BigQuery</span><span>Vertex AI</span><span>Kubeflow</span><span>MLOps</span></div>
+        </article>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-icon">⚙️</div>
+          <div class="project-meta">Pipelines · Automation</div>
+          <h3>Kubeflow Multi-Model Pipelines</h3>
+          <p>Designed automated training and inference pipelines, used GCP buckets for scalable data management, and standardized reproducible ML development inside containerized environments.</p>
+          <div class="tags"><span>Kubeflow</span><span>GCP</span><span>Docker</span><span>CI/CD</span></div>
+        </article>
+        <article class="project-card reveal" data-tilt>
+          <div class="project-icon">🛒</div>
+          <div class="project-meta">Classical ML · Retail</div>
+          <h3>Customer Segmentation & Purchase Power</h3>
+          <p>Built multi-model predictions for customer wallet size across categories using RF, KNN, HGBM, LGBM, and Naive Bayes, with parameter tuning and business-aligned model optimization.</p>
+          <div class="tags"><span>ML</span><span>BigQuery</span><span>LGBM</span><span>EDA</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-head reveal">
+        <p class="eyebrow">Tech Stack</p>
+        <h2>Tools I use to build production-grade AI systems.</h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skill-panel reveal">
+          <h3>AI Agents, LLMs & RAG</h3>
+          <div class="skill-cloud" data-skills="LangChain,LangGraph,LLM,SLM,RAG,MCP,Tool Calling,AI Agents,Prompt Engineering,Gemini,GPT,NLP,Cross Encoder,Query Expansion,Embeddings"></div>
+        </div>
+        <div class="skill-panel reveal">
+          <h3>Infrastructure & MLOps</h3>
+          <div class="skill-cloud" data-skills="Vertex AI,Kubeflow,BigQuery,Dataform,GKE,Docker,Kubernetes,Artifact Registry,Jenkins,CI/CD,Langfuse,OpenTelemetry,Model Monitoring,Retraining"></div>
+        </div>
+        <div class="skill-panel reveal">
+          <h3>Data Science & Engineering</h3>
+          <div class="skill-cloud" data-skills="Python,SQL,Pandas,NumPy,Scikit-learn,PyTorch,OpenCV,Matplotlib,Seaborn,Flask,FastAPI,FAISS,ChromaDB,LightGBM,HGBM"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section github" id="github">
+      <div class="section-head reveal">
+        <p class="eyebrow">GitHub Metrics</p>
+        <h2>Open-source activity and engineering interests.</h2>
+      </div>
+      <div class="github-watch-grid reveal" id="githubWatchGrid" aria-live="polite">
+        <article class="watch-card"><span>Public Repos</span><strong data-github="public_repos">--</strong><small>repositories owned</small></article>
+        <article class="watch-card"><span>Followers</span><strong data-github="followers">--</strong><small>people following you</small></article>
+        <article class="watch-card"><span>Following</span><strong data-github="following">--</strong><small>profiles you follow</small></article>
+        <article class="watch-card"><span>Total Repo Stars</span><strong data-github="total_stars">--</strong><small>stars received</small></article>
+        <article class="watch-card"><span>Repo Watchers</span><strong data-github="total_watchers">--</strong><small>subscribers/watchers</small></article>
+        <article class="watch-card"><span>Repos Starred</span><strong data-github="starred_count">--</strong><small>repositories you starred</small></article>
+      </div>
+      <p class="github-note reveal">These numbers load live from GitHub public APIs. Exact repository traffic/views require a private GitHub token, so this page uses public metrics plus the profile-view badge below.</p>
+      <div class="profile-view-badge reveal">
+        <img src="https://komarev.com/ghpvc/?username=LogeshChandran&label=Profile%20views&color=38bdf8&style=for-the-badge" alt="Logesh profile views badge" loading="lazy">
+      </div>
+      <div class="github-grid reveal">
+        <img src="https://github-readme-stats.vercel.app/api?username=LogeshChandran&show_icons=true&theme=tokyonight&hide_border=true" alt="Logesh GitHub stats" loading="lazy">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LogeshChandran&layout=compact&theme=tokyonight&hide_border=true" alt="Logesh top languages" loading="lazy">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=LogeshChandran&theme=tokyonight&hide_border=true" alt="Logesh GitHub streak" loading="lazy">
+        <img src="https://github-readme-activity-graph.vercel.app/graph?username=LogeshChandran&theme=tokyo-night&hide_border=true" alt="Logesh GitHub activity graph" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-card reveal" data-tilt>
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s build useful, observable, secure AI systems.</h2>
+        <p>
+          I’m interested in AI agents, enterprise automation, GenAI infrastructure, RAG systems, MLOps,
+          and practical AI solutions that create real business value.
+        </p>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:logeshchandran2507@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/logeshchandran/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/LogeshChandran" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://www.instagram.com/logesh_kc" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Logesh Chandran. Building AI Agents · Architecting GenAI Systems · Automating Enterprise Workflows.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
