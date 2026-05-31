@@ -77,6 +77,68 @@ function setGithubMetric(key, value) {
   if (element) element.textContent = formatNumber(value);
 }
 
+function renderLanguageUsage(repos) {
+  const languageList = document.getElementById('languageList');
+  if (!languageList) return;
+
+  const counts = repos.reduce((acc, repo) => {
+    if (!repo.language) return acc;
+    acc[repo.language] = (acc[repo.language] || 0) + 1;
+    return acc;
+  }, {});
+
+  const languages = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6);
+
+  if (!languages.length) {
+    languageList.innerHTML = '<p class="loading-text">No public language data found yet.</p>';
+    return;
+  }
+
+  const max = Math.max(...languages.map(([, count]) => count));
+  languageList.innerHTML = languages.map(([language, count]) => {
+    const width = Math.max(12, Math.round((count / max) * 100));
+    return `
+      <div class="language-row">
+        <div class="language-top"><span>${language}</span><span>${count} repo${count > 1 ? 's' : ''}</span></div>
+        <div class="language-bar"><span class="language-fill" style="width:${width}%"></span></div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderRepoHighlights(repos) {
+  const repoList = document.getElementById('repoList');
+  if (!repoList) return;
+
+  const highlightedRepos = repos
+    .filter((repo) => !repo.fork)
+    .sort((a, b) => {
+      const scoreA = (a.stargazers_count || 0) * 3 + (a.forks_count || 0) * 2 + new Date(a.updated_at).getTime() / 1e13;
+      const scoreB = (b.stargazers_count || 0) * 3 + (b.forks_count || 0) * 2 + new Date(b.updated_at).getTime() / 1e13;
+      return scoreB - scoreA;
+    })
+    .slice(0, 4);
+
+  if (!highlightedRepos.length) {
+    repoList.innerHTML = '<p class="loading-text">No public repositories found yet.</p>';
+    return;
+  }
+
+  repoList.innerHTML = highlightedRepos.map((repo) => {
+    const stars = repo.stargazers_count || 0;
+    const forks = repo.forks_count || 0;
+    const language = repo.language || 'Code';
+    return `
+      <a class="repo-item" href="${repo.html_url}" target="_blank" rel="noreferrer">
+        <strong>${repo.name}</strong>
+        <span>${language} · ★ ${stars} · Forks ${forks}</span>
+      </a>
+    `;
+  }).join('');
+}
+
 async function fetchAllPublicRepos() {
   const repos = [];
   let page = 1;
@@ -137,8 +199,14 @@ async function loadGithubMetrics() {
     setGithubMetric('total_stars', totalStars);
     setGithubMetric('total_watchers', totalWatchers);
     setGithubMetric('starred_count', starredCount);
+    renderLanguageUsage(repos);
+    renderRepoHighlights(repos);
   } catch (error) {
     githubFields.forEach((field) => { field.textContent = 'Live'; });
+    const languageList = document.getElementById('languageList');
+    const repoList = document.getElementById('repoList');
+    if (languageList) languageList.innerHTML = '<p class="loading-text">GitHub API limit reached. Try refreshing later.</p>';
+    if (repoList) repoList.innerHTML = '<p class="loading-text">GitHub API limit reached. Try refreshing later.</p>';
     console.warn('Unable to load GitHub metrics:', error);
   }
 }
